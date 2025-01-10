@@ -28,4 +28,17 @@ public class ResumoProducao {
         this.valorTotalImposto = valorTotalImposto;
     }
 
+    public void addValorTotalProducao(BigDecimal valorTotalProducao) {
+        this.valorTotalProducao = this.valorTotalProducao.add(valorTotalProducao);
+    }
+
+    public void addValorTotalImposto(BigDecimal valorTotalImposto) {
+        this.valorTotalImposto = this.valorTotalImposto.add(valorTotalImposto);
+    }
+
+    public void add(ResumoProducao outro) {
+        this.valorTotalProducao = this.valorTotalProducao.add(outro.valorTotalProducao);
+        this.valorTotalImposto = this.valorTotalImposto.add(outro.valorTotalImposto);
+    }
+
 }

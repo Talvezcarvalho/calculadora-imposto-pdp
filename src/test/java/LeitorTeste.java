@@ -19,11 +19,12 @@ public class LeitorTeste {
         assertFalse(producao.isEmpty(), "A lista de produção não deve ser vazia.");
 
         for (Producao p : producao) {
-        
+
             assertNotNull(p.getProduto(), "O produto não deve ser nulo.");
             assertNotNull(p.getProduto().getNome(), "O nome do produto não deve ser nulo.");
             assertTrue(p.getQuantidade() > 0, "A quantidade deve ser maior que zero.");
-            assertTrue(p.getValorUnitario().compareTo(BigDecimal.ZERO) > 0, "O valor unitário deve ser maior que zero.");
+            assertTrue(p.getValorUnitario().compareTo(BigDecimal.ZERO) > 0,
+                    "O valor unitário deve ser maior que zero.");
             assertNotNull(p.getlocalProducao(), "A unidade federativa não deve ser nula.");
         }
     }

@@ -11,12 +11,8 @@ public class Main {
     public static void main(String[] args) {
 
         ArrayList<Producao> producao = LeitorArquivoJson.lerArquivoProducao();
-
-        Calculadora calculadora = new Calculadora();
-
-        CalculadoraResumoProducao calculadoraResumoProducao = new CalculadoraResumoProducao(calculadora);
-
-        ResumoProducao resumo = calculadoraResumoProducao.calcularResumo(producao);
+        CalculadoraIterador calculadoraIterador = new CalculadoraIterador();
+        ResumoProducao resumo = calculadoraIterador.processarProducao(producao);
 
         String valorImpostoFormatado = FormatadorNumerico.formatar(resumo.getValorTotalImposto());
         String valorProducaoFormatado = FormatadorNumerico.formatar(resumo.getValorTotalProducao());
